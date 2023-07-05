@@ -1,7 +1,107 @@
-.login-btn {
-  width: 150px;
-  height: 30px;
-  color: #fff;
-  cursor: pointer;
-  background-color: lightcoral;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+$colabRed: #EE6C4D;
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .colab-logo {
+    color: $colabRed;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1rem;
+  }
+
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .sign-in-header {
+      position: relative;
+      right: 8rem;
+    }
+
+    .sign-in-subtext {
+      position: relative;
+      right: 5.5rem;
+    }
+
+    .auth-inputs {
+      display: flex;
+      flex-direction: column;
+
+      .common-input {
+        width: 300px;
+        padding: 1rem;
+        margin: .5rem 0;
+        border: 1px solid #212121;
+        outline: none;
+
+        &:focus {
+          outline: 2px solid $colabRed;
+        }
+      }
+    }
+
+    .login-btn {
+      position: relative;
+      right: 5.75rem;
+
+      width: 150px;
+      height: 30px;
+      color: #fff;
+      background-color: $colabRed;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;      
+    }
+
+    .hr-text {
+      line-height: 1em;
+      position: relative;
+      outline: 0;
+      border: 0;
+      color: black;
+      text-align: center;
+      height: 1.5em;
+      opacity: .5;
+      &:before {
+        content: '';
+        // use the linear-gradient for the fading effect
+        // use a solid background color for a solid bar
+        background: linear-gradient(to right, transparent, #818078, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+      }
+      &:after {
+        content: attr(data-content);
+        position: relative;
+        display: inline-block;
+        color: black;
+    
+        padding: 0 .5em;
+        line-height: 1.5em;
+        // this is really the only tricky part, you need to specify the background color of the container element...
+        color: #818078;
+        background-color: #F7FFF7;
+      }
+    }
+
+    .google-btn-container {
+      position: relative;
+      right: 3rem;
+
+      .google-btn {
+        width: 300px;
+      }
+    }
+  }
 }
+
+
+
